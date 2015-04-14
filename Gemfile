@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 group :development do
   gem 'sqlite3'
 end
+gem 'figaro', '1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'devise'
@@ -40,7 +41,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pundit'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
