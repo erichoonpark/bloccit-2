@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     authorize @post
     if @post.update_attributes(post_params)
       flash[:notice] = "Post was updated."
-      redirect_to @post
+      redirect_to @topic
     else
       flash[:error] = "There was an error saving the post. Please try again."
       render :edit
