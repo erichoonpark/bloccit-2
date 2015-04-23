@@ -42,6 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'redcarpet'
+gem 'will_paginate', '~> 3.0.5'
 gem 'pundit'
 gem 'carrierwave'
 gem 'mini_magick'
