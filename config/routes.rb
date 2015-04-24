@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   devise_for :users
     resources :users, only: [:update]
 
   resources :topics do
-     resources :posts, except: [:index]
-   end
-  get 'about' => 'welcome#about'
-  # Redirecting the about variable to a welcome/about
+    resources :posts, except: [:index] do
+      resources :comments, only: [:create]
+    end
+  end
 
+  get 'about' => 'welcome#about' # Redirecting the about variable to a welcome/about
   get 'newpost' => 'posts#new'
-
   root to: 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

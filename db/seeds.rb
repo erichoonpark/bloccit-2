@@ -19,7 +19,7 @@ require 'faker'
   topics = Topic.all
 
  # Create Posts
- 2000.times do
+ 200.times do
    Post.create!(
    user:   users.sample,
    topic:  topics.sample,
@@ -30,8 +30,9 @@ require 'faker'
  posts = Post.all
 
  # Create Comments
- 1000.times do
+ 100.times do
    Comment.create!(
+     user: users.sample,
      post: posts.sample,
      body: Faker::Lorem.paragraph
    )
