@@ -9,6 +9,11 @@ group :production do
   gem 'rails_12factor'
 end
 gem 'faker'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 gem 'bootstrap-sass'
 group :development do
   gem 'sqlite3'
