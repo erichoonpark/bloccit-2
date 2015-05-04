@@ -6,14 +6,14 @@ require 'rails_helper'
      #For description and grouping
      before do
        #Create objects and assign them to an instance variable before every spec
-       @post = Post.create(title: 'post title', body: 'post body')
+       @post = Post.create(title: 'Post Title', body: 'Post bodies must be pretty long.')
        3.times { @post.votes.create(value: 1) }
        2.times { @post.votes.create(value: -1) }
      end
 
      describe '#up_votes' do
        it "counts the number of votes with value = 1" do
-         #It takes a string argument specifying the behavior 
+         #It takes a string argument specifying the behavior
          expect( @post.up_votes ).to eq(3)
        end
      end
