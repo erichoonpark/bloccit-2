@@ -23,4 +23,16 @@ class Post < ActiveRecord::Base
     redcarpet = Redcarpet::Markdown.new(renderer, extensions)
     (redcarpet.render markdown).html_safe
   end
+
+  def up_votes
+     votes.where(value: 1).count
+  end
+
+  def down_votes
+    votes.where(value: -1).count
+  end
+
+  def points
+    votes.sum
+  end
 end
