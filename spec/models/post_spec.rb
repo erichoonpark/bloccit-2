@@ -28,13 +28,5 @@ require 'rails_helper'
        end
      end
 
-   describe '#create_vote' do
-     it "generate an up_vote upon creation of a post" do
-       post = associated_post
-       expect( post.up_votes ).to eq(0)
-       post.create_vote
-       expect(post.up_votes).to(1)
-     end
-   end
  end
 end
