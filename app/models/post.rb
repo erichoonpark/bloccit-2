@@ -1,8 +1,9 @@
 class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
+  has_many :votes, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   belongs_to :user
   belongs_to :topic
-  has_many :votes, dependent: :destroy
 
   default_scope {order('rank DESC')}
 
@@ -32,9 +33,9 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
 
-  # def create_vote
-  #   user.votes.create(value: 1, post: self)
-  # end
+  def create_vote
+    user.votes.create(value: 1, post: self)
+  end
 
   def save_with_initial_vote(user)
     ActiveRecord::Base.transaction do
