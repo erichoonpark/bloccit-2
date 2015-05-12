@@ -20,7 +20,11 @@ require 'rails_helper'
      end
 
      it "returns the appropriate favorite if it exists" do
-       expect( )
+       post :create, { post_id: @post.id }
+       expect( @user.favorites.find_by_post_id(@post.id) ).to_not be_nil
+       expect (@user.favorites.find_by_post_id(@post.id).post_id).to eq(@post.id)
+
+
      end
    end
  end
