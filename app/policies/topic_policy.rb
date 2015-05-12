@@ -16,4 +16,7 @@ class TopicPolicy < ApplicationPolicy
      user.present? && (user.admin? || record.user == user || user.moderator?)
    end
 
+   def show?
+     record.public? || user.present? 
+   end
  end

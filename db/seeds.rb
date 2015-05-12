@@ -52,6 +52,15 @@ require 'faker'
   admin.skip_confirmation!
   admin.save!
 
+  admin2 = User.new(
+    name:     'Eric Park',
+    email:    'erichoonpark@gmail.com',
+    password: 'bullseye',
+    role:     'admin'
+  )
+  admin2.skip_confirmation!
+  admin2.save!
+
   # Create a moderator
   moderator = User.new(
     name:     'Moderator User',
