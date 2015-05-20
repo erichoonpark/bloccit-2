@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  def voted(post)
+    votes.where(post_id: post.id).first
+  end
 
   def admin?
     role == 'admin'

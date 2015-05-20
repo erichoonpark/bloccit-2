@@ -10,7 +10,8 @@ class VotesController < ApplicationController
     update_vote!(-1)
     redirect_to :back
   end
-    private
+
+  private
     def load_post_and_vote
       @post = Post.find(params[:post_id])
       @vote = @post.votes.where(user_id: current_user.id).first
@@ -26,4 +27,4 @@ class VotesController < ApplicationController
         @vote.save
       end
     end
-  end
+end
