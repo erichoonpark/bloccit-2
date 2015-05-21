@@ -4,7 +4,7 @@ class Topic < ActiveRecord::Base
 
   validates :name, length: {minimum: 5}, presence: true
 
-  scope :visible_to, publicly_viewable
+  scope :visible_to, -> (user) { publicly_viewable(user) }
 
   def publicly_viewable(user)
     if user
