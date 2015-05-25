@@ -17,4 +17,15 @@ module TestFactories
     user.save
     user
   end
+
+  FactoryGirl.define do
+  factory :user do
+    email 'test@example.com'
+    password 'f4k3p455w0rd'
+    scope: :user
+    user = FactoryGirl.create(:user) #Devise Confirmable Module
+    user.confirmed_at = Time.now
+    user.save
+  end
+end
 end
